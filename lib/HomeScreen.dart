@@ -118,7 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 25,
                 ),
                 Container(
-                  padding: const EdgeInsets.fromLTRB(50, 10, 20, 1),
+                  padding: const EdgeInsets.fromLTRB(30, 10, 20, 1),
                   height: 200,
                   decoration: BoxDecoration(
                     
@@ -126,15 +126,29 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: Colors.green.shade50,
                       borderRadius: const BorderRadius.all(Radius.circular(30))),
                   alignment: Alignment.center,
-                  child: Text(
-                    msg,
-                    maxLines: 2,
-                    style: const TextStyle(
-                        fontSize: 22,
-                        color: Colors.green,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: ''),
-                  ),
+                  child: Column(
+mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                       const Text(
+                      "Result",
+                      maxLines: 2,
+                      style: TextStyle(
+                          fontSize: 22,
+                          color: Colors.green,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: ''),
+                    ),
+                    SizedBox(height: 12,),
+                      Text(
+                      msg,
+                      maxLines: 2,
+                      style: const TextStyle(
+                          fontSize: 22,
+                          color: Colors.green,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: ''),
+                    ),
+              ]),
                 )
               ],
             ),
@@ -161,8 +175,9 @@ class _HomeScreenState extends State<HomeScreen> {
         
       } else if (bmi > 25) {
         msg = "    BMI = ${bmi.toStringAsFixed(2)}\nOh! Overweighted";
+
       } else {
-        msg = "      BMI = ${bmi.toStringAsFixed(2)}\nYou are healthy person";
+        msg = "         BMI = ${bmi.toStringAsFixed(2)}\nYou are healthy person";
       }
     });
   }
