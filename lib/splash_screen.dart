@@ -2,7 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import 'HomeScreen.dart';
+
+import 'name_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -14,21 +15,21 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Timer(Duration(seconds: 2), () { 
-Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
-
+    Timer(const Duration(seconds: 2), () {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => const NameScreen()));
     });
     super.initState();
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green.shade50,
-      body:Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-        Image.asset("bmi.png")
-      ],)
-    );
+        backgroundColor: Colors.green.shade50,
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [Image.asset("assets/logo.png")],
+          ),
+        ));
   }
 }

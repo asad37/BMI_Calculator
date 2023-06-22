@@ -12,8 +12,9 @@ class _HomeScreenState extends State<HomeScreen> {
   TextEditingController wieghtController = TextEditingController();
   TextEditingController inchController = TextEditingController();
   String msg = "";
-  @override
+var home;
   Widget build(BuildContext context) {
+    
     return Scaffold(
       backgroundColor: Colors.green.shade50,
       appBar: AppBar(
@@ -30,6 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+             
                 const Text(
                   "BMI Calculator",
                   style: TextStyle(
@@ -105,6 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         )),
                     onPressed: () async {
                       setController();
+
                     },
                     child: const Text(
                       "Calculate",
@@ -121,34 +124,36 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: const EdgeInsets.fromLTRB(30, 10, 20, 1),
                   height: 200,
                   decoration: BoxDecoration(
-                    
-                    border: Border.all(color: Colors.blue,width: 2.5),
-                    color: Colors.green.shade50,
-                      borderRadius: const BorderRadius.all(Radius.circular(30))),
+                      border: Border.all(color: Colors.blue, width: 2.5),
+                      color: Colors.green.shade50,
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(30))),
                   alignment: Alignment.center,
                   child: Column(
-mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                       const Text(
-                      "Result",
-                      maxLines: 2,
-                      style: TextStyle(
-                          fontSize: 22,
-                          color: Colors.green,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: ''),
-                    ),
-                    SizedBox(height: 12,),
-                      Text(
-                      msg,
-                      maxLines: 2,
-                      style: const TextStyle(
-                          fontSize: 22,
-                          color: Colors.green,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: ''),
-                    ),
-              ]),
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          "Result",
+                          maxLines: 2,
+                          style: TextStyle(
+                              fontSize: 22,
+                              color: Colors.green,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: ''),
+                        ),
+                        SizedBox(
+                          height: 12,
+                        ),
+                        Text(
+                          msg,
+                          maxLines: 2,
+                          style: const TextStyle(
+                              fontSize: 22,
+                              color: Colors.green,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: ''),
+                        ),
+                      ]),
                 )
               ],
             ),
@@ -172,12 +177,11 @@ mainAxisAlignment: MainAxisAlignment.center,
       var bmi = weight / (tm * tm);
       if (bmi < 18.5) {
         msg = "    BMI= ${bmi.toStringAsFixed(2)} \nOh! Underweight";
-        
       } else if (bmi > 25) {
         msg = "    BMI = ${bmi.toStringAsFixed(2)}\nOh! Overweighted";
-
       } else {
-        msg = "         BMI = ${bmi.toStringAsFixed(2)}\nYou are healthy person";
+        msg =
+            "         BMI = ${bmi.toStringAsFixed(2)}\nYou are healthy person";
       }
     });
   }
