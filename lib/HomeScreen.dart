@@ -1,23 +1,34 @@
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<HomeScreen> createState() => _HomeScreenState(); 
 }
-
 class _HomeScreenState extends State<HomeScreen> {
+   
   TextEditingController heigtController = TextEditingController();
   TextEditingController wieghtController = TextEditingController();
   TextEditingController inchController = TextEditingController();
   String msg = "";
-var home;
+  
   Widget build(BuildContext context) {
-    
+ 
     return Scaffold(
       backgroundColor: Colors.green.shade50,
       appBar: AppBar(
+        actions: [
+           Container(
+            alignment:Alignment.center ,
+            decoration: BoxDecoration(
+                border: Border.all(
+                    color: const Color.fromARGB(255, 32, 97, 151), width: 2.5),
+                borderRadius: const BorderRadius.all(Radius.circular(30))),
+            padding: const EdgeInsets.fromLTRB(50, 0, 50, 0),
+            margin: const EdgeInsets.only(right: 10),
+            //child:  Text("welcome $"),
+          )],
           centerTitle: true,
           title: const Text(
             "BMI Calculator",
